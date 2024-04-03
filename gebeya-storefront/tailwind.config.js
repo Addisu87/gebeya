@@ -49,11 +49,12 @@ module.exports = {
       screens: {
         "2xsmall": "320px",
         xsmall: "512px",
-        small: "1024px",
-        medium: "1280px",
-        large: "1440px",
-        xlarge: "1680px",
-        "2xlarge": "1920px",
+        small: "768px",
+        medium: "1024px",
+        large: "1280px",
+        xlarge: "1440px",
+        "2xlarge": "1680px",
+        "3xlarge": "1920px",
       },
       fontSize: {
         "3xl": "2rem",
