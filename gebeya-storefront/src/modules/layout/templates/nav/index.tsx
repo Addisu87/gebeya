@@ -1,5 +1,5 @@
-import { Suspense } from "react"
 import Image from "next/image"
+import { Suspense } from "react"
 
 import { listRegions } from "@lib/data"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
@@ -23,6 +23,7 @@ export default async function Nav() {
             >
               <div className="flex space-x-2 justify-center items-center">
                 <Image src={logo} alt="logo" width={65} height={65} />
+
                 <span>gebeya</span>
               </div>
             </LocalizedClientLink>

@@ -1,15 +1,15 @@
 "use client"
 
-import { useEffect, useState } from "react"
 import Image from "next/image"
-import { Swiper, SwiperSlide } from "swiper/react"
+import { useEffect, useState } from "react"
 import type SwiperType from "swiper"
 import { Pagination } from "swiper/modules"
+import { Swiper, SwiperSlide } from "swiper/react"
 
+import { ChevronLeft, ChevronRight } from "@medusajs/icons"
+import { clx } from "@medusajs/ui"
 import "swiper/css"
 import "swiper/css/pagination"
-import { clx, useToggleState } from "@medusajs/ui"
-import { ChevronLeft, ChevronRight } from "@medusajs/icons";
 
 interface ImageSliderProps {
   urls: string[]
@@ -23,8 +23,6 @@ const ImageSlider = ({ urls }: ImageSliderProps) => {
     isBeginning: true,
     isEnd: activeIndex === (urls.length ?? 0) - 1,
   })
-
-  const toggleState = useToggleState()
 
   useEffect(() => {
     swiper?.on("slideChange", ({ activeIndex }) => {
