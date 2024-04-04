@@ -5,11 +5,11 @@ import Image from "next/image"
 import { Swiper, SwiperSlide } from "swiper/react"
 import type SwiperType from "swiper"
 import { Pagination } from "swiper/modules"
-import { ChevronLeft, ChevronRight } from "lucide-react"
 
 import "swiper/css"
 import "swiper/css/pagination"
 import { clx, useToggleState } from "@medusajs/ui"
+import { ChevronLeft, ChevronRight } from "@medusajs/icons";
 
 interface ImageSliderProps {
   urls: string[]

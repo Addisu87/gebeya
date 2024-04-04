@@ -1,3 +1,4 @@
+import { Toaster } from "@medusajs/ui"
 import { Metadata } from "next"
 import "styles/globals.css"
 
@@ -13,6 +14,8 @@ export default function RootLayout(props: { children: React.ReactNode }) {
       <body>
         <main className="relative">{props.children}</main>
       </body>
+
+      <Toaster />
     </html>
   )
 }
