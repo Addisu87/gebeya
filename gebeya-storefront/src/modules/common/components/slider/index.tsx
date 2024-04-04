@@ -1,6 +1,5 @@
 "use client"
 
-import Image from "next/image"
 import { useEffect, useState } from "react"
 import type SwiperType from "swiper"
 import { Pagination } from "swiper/modules"
@@ -11,13 +10,23 @@ import { clx } from "@medusajs/ui"
 import "swiper/css"
 import "swiper/css/pagination"
 
-interface ImageSliderProps {
-  urls: string[]
+import { Image as MedusaImage } from "@medusajs/medusa"
+import Image from "next/image"
+
+type ImageGalleryProps = {
+  urls: MedusaImage[]
 }
 
-const ImageSlider = ({ urls }: ImageSliderProps) => {
+const ImageSlider = ({ urls }: ImageGalleryProps) => {
   const [swiper, setSwiper] = useState<null | SwiperType>(null)
   const [activeIndex, setActiveIndex] = useState(0)
+
+  // Remove hydration error
+  const [isMounted, setIsMounted] = useState<boolean>(false)
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
 
   const [slideConfig, setSlideConfig] = useState({
     isBeginning: true,
@@ -53,7 +62,7 @@ const ImageSlider = ({ urls }: ImageSliderProps) => {
           })}
           aria-label="next image"
         >
-          <ChevronRight className="h-4 w-4 text-zinc-700" />{" "}
+          <ChevronRight className="h-4 w-4 text-zinc-700 items-center justify-center" />{" "}
         </button>
         <button
           onClick={(e) => {
@@ -67,7 +76,7 @@ const ImageSlider = ({ urls }: ImageSliderProps) => {
           })}
           aria-label="previous image"
         >
-          <ChevronLeft className="h-4 w-4 text-zinc-700" />{" "}
+          <ChevronLeft className="h-4 w-4 text-zinc-700 items-center justify-center" />
         </button>
       </div>
 
@@ -83,17 +92,23 @@ const ImageSlider = ({ urls }: ImageSliderProps) => {
         slidesPerView={1}
         className="h-full w-full"
       >
-        {urls.map((url, i) => (
-          <SwiperSlide key={i} className="-z-10 relative h-full w-full">
-            <Image
-              fill
-              loading="eager"
-              className="-z-10 h-full w-full object-cover object-center"
-              src={url}
-              alt="Product image"
-            />
-          </SwiperSlide>
-        ))}
+        {isMounted &&
+          urls.map((image, index) => (
+            <SwiperSlide
+              key={image.id}
+              className="-z-10 relative h-full w-full"
+            >
+              <Image
+                loading="eager"
+                priority={index <= 2 ? true : false}
+                src={image.url}
+                className="-z-10 h-full w-full object-cover object-center"
+                alt={`Product image ${index + 1}`}
+                fill
+                sizes="(max-width: 576px) 280px, (max-width: 768px) 360px, (max-width: 992px) 480px, 800px"
+              />
+            </SwiperSlide>
+          ))}
       </Swiper>
     </div>
   )

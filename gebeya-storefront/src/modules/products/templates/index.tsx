@@ -11,6 +11,7 @@ import ProductInfo from "@modules/products/templates/product-info"
 import SkeletonRelatedProducts from "@modules/skeletons/templates/skeleton-related-products"
 import { notFound } from "next/navigation"
 import ProductActionsWrapper from "./product-actions-wrapper"
+import ImageSlider from "@modules/common/components/slider"
 
 type ProductTemplateProps = {
   product: PricedProduct
@@ -23,23 +24,29 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
   region,
   countryCode,
 }) => {
-  if (!product || !product.id) {
-    return notFound()
-  }
+  if (!product || !product.id) return notFound()
 
   return (
     <>
       <div
-        className="content-container flex flex-col small:flex-row small:items-start py-6 relative"
+        className="content-container flex flex-col small:flex-row small:items-start py-6 relative gap-x-4"
         data-testid="product-container"
       >
         <div className="flex flex-col small:sticky small:top-48 small:py-0 small:max-w-[300px] w-full py-8 gap-y-6">
           <ProductInfo product={product} />
           <ProductTabs product={product} />
         </div>
-        <div className="block w-full relative">
+        {/* Product images */}
+
+        {/* <div className="block w-full relative">
           <ImageGallery images={product?.images || []} />
+        </div> */}
+
+        {/* Product images */}
+        <div className="relative aspect-square w-full overflow-hidden bg-ui-bg-subtle">
+          <ImageSlider urls={product?.images || []} />
         </div>
+
         <div className="flex flex-col small:sticky small:top-48 small:py-0 small:max-w-[300px] w-full py-8 gap-y-12">
           <ProductOnboardingCta />
           <Suspense
