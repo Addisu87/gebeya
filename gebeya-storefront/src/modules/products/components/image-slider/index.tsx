@@ -48,7 +48,7 @@ const ImageSlider = ({ urls }: ImageGalleryProps) => {
   const inactiveStyles = "hidden text-gray-400"
 
   return (
-    <div className="group relative bg-zinc-100 aspect-square overflow-hidden rounded-xl">
+    <div className="group relative aspect-[29/32] overflow-hidden rounded-large">
       <div className="absolute z-10 inset-0 opacity-0 group-hover:opacity-100 transition">
         <button
           onClick={(e) => {
@@ -76,7 +76,7 @@ const ImageSlider = ({ urls }: ImageGalleryProps) => {
           })}
           aria-label="previous image"
         >
-          <ChevronLeft className="h-4 w-4 text-zinc-700 items-center justify-center" />
+          <ChevronLeft className="h-4 w-4 text-zinc-700 items-center justify-center" />{" "}
         </button>
       </div>
 
@@ -94,15 +94,12 @@ const ImageSlider = ({ urls }: ImageGalleryProps) => {
       >
         {isMounted &&
           urls.map((image, index) => (
-            <SwiperSlide
-              key={image.id}
-              className="-z-10 relative h-full w-full"
-            >
+            <SwiperSlide key={image.id} className="relative h-full w-full">
               <Image
                 loading="eager"
                 priority={index <= 2 ? true : false}
                 src={image.url}
-                className="-z-10 h-full w-full object-cover object-center"
+                className="absolute inset-0 rounded-large object-cover object-center"
                 alt={`Product image ${index + 1}`}
                 fill
                 sizes="(max-width: 576px) 280px, (max-width: 768px) 360px, (max-width: 992px) 480px, 800px"
