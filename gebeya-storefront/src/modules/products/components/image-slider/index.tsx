@@ -93,7 +93,7 @@ const ImageSlider = ({ urls }: ImageGalleryProps) => {
         className="h-full w-full"
       >
         {isMounted &&
-          urls.map((image, index) => (
+          urls?.map((image, index) => (
             <SwiperSlide key={image.id} className="relative h-full w-full">
               <Image
                 loading="eager"
