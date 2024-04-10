@@ -3,7 +3,7 @@ import Image from "next/image"
 
 import { Image as MedusaImage } from "@medusajs/medusa"
 
-import logo from "../../../../../public/shopping.jpeg"
+import banner from "../../../../../public/ee1.jpg"
 
 type ImageGalleryProps = {
   urls: MedusaImage[]
@@ -11,25 +11,25 @@ type ImageGalleryProps = {
 
 const Hero = ({ urls }: ImageGalleryProps) => {
   return (
-    <div className="h-[75vh] w-full border-b border-ui-border-base relative bg-ui-bg-subtle">
-      <div className="absolute inset-0 z-10 flex flex-col justify-center items-center text-center small:p-32 gap-6">
-        <span>
+    <div className="content-container mx-auto">
+      <div className="h-[75vh] w-full border-b border-ui-border-base relative bg-ui-bg-subtle">
+        <div className="absolute inset-0 z-10 flex flex-col justify-center items-center text-center small:p-32 gap-6">
           <Heading
             level="h1"
-            className="text-3xl leading-10 text-ui-fg-base font-normal"
+            className="text-4xl leading-10 font-bold lg:text-5xl sm:max-w-xl max-w-xs bg-gradient-to-r from-green-500 
+            from-20% via-yellow-500 via-40% to-red-500 to-90% inline-block text-transparent bg-clip-text"
           >
-            E-commerce Starter Template
+            Ethiopian Cultural Clothes
           </Heading>
-
-          <Image
-            loading="eager"
-            src={logo}
-            className="absolute inset-0 rounded-large object-cover object-center"
-            alt="Product image"
-            fill
-            sizes="(max-width: 576px) 280px, (max-width: 768px) 360px, (max-width: 992px) 480px, 800px"
-          />
-        </span>
+        </div>
+        <Image
+          loading="eager"
+          src={banner}
+          className="absolute inset-0 rounded-large object-cover object-center"
+          alt="Product image"
+          fill
+          sizes="(max-width: 576px) 280px, (max-width: 768px) 360px, (max-width: 992px) 480px, 800px"
+        />
       </div>
     </div>
   )

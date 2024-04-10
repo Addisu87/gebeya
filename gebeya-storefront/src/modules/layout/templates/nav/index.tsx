@@ -6,7 +6,7 @@ import LocalizedClientLink from "@modules/common/components/localized-client-lin
 import CartButton from "@modules/layout/components/cart-button"
 import SideMenu from "@modules/layout/components/side-menu"
 
-import logo from "../../../../../public/shopping.jpeg"
+import banner from "../../../../../public/ee1.jpg"
 
 export default async function Nav() {
   const regions = await listRegions().then((regions) => regions)
@@ -22,8 +22,13 @@ export default async function Nav() {
               data-testid="nav-store-link"
             >
               <div className="flex space-x-2 justify-center items-center">
-                <Image src={logo} alt="logo" width={65} height={65} />
-
+                <Image
+                  src={banner}
+                  alt="logo"
+                  width={50}
+                  height={50}
+                  className=""
+                />
                 <span>gebeya</span>
               </div>
             </LocalizedClientLink>
