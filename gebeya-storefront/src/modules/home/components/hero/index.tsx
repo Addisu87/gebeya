@@ -6,13 +6,13 @@ import { Image as MedusaImage } from "@medusajs/medusa"
 import banner from "../../../../../public/ee1.jpg"
 
 type ImageGalleryProps = {
-  urls: MedusaImage[]
+  urls?: MedusaImage[]
 }
 
 const Hero = ({ urls }: ImageGalleryProps) => {
   return (
     <div className="content-container mx-auto">
-      <div className="h-[75vh] w-full border-b border-ui-border-base relative bg-ui-bg-subtle">
+      <div className="h-[50vh] w-full border-b border-ui-border-base relative bg-ui-bg-subtle">
         <div className="absolute inset-0 z-10 flex flex-col justify-center items-center text-center small:p-32 gap-6">
           <Heading
             level="h1"
@@ -22,6 +22,7 @@ const Hero = ({ urls }: ImageGalleryProps) => {
             Ethiopian Cultural Clothes
           </Heading>
         </div>
+
         <Image
           loading="eager"
           src={banner}
