@@ -13,11 +13,11 @@ import "swiper/css/pagination"
 import { Image as MedusaImage } from "@medusajs/medusa"
 import Image from "next/image"
 
-type ImageGalleryProps = {
+type ImageSliderProps = {
   urls: MedusaImage[]
 }
 
-const ImageSlider = ({ urls }: ImageGalleryProps) => {
+const ImageSlider = ({ urls }: ImageSliderProps) => {
   const [swiper, setSwiper] = useState<null | SwiperType>(null)
   const [activeIndex, setActiveIndex] = useState(0)
 
