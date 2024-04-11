@@ -4,6 +4,7 @@ import Image from "next/image"
 import { Image as MedusaImage } from "@medusajs/medusa"
 
 import banner from "../../../../../public/ee1.jpg"
+import ImageSlider from "@modules/products/components/image-slider"
 
 type ImageGalleryProps = {
   urls?: MedusaImage[]
@@ -11,7 +12,7 @@ type ImageGalleryProps = {
 
 const Hero = ({ urls }: ImageGalleryProps) => {
   return (
-    <div className="content-container mx-auto">
+    <div className="content-container mx-auto mt-1">
       <div className="h-[50vh] w-full border-b border-ui-border-base relative bg-ui-bg-subtle">
         <div className="absolute inset-0 z-10 flex flex-col justify-center items-center text-center small:p-32 gap-6">
           <Heading
@@ -23,14 +24,18 @@ const Hero = ({ urls }: ImageGalleryProps) => {
           </Heading>
         </div>
 
-        <Image
-          loading="eager"
-          src={banner}
-          className="absolute inset-0 rounded-large object-cover object-center"
-          alt="Product image"
-          fill
-          sizes="(max-width: 576px) 280px, (max-width: 768px) 360px, (max-width: 992px) 480px, 800px"
-        />
+        {urls && urls.length > 0 ? (
+          <ImageSlider urls={urls} />
+        ) : (
+          <Image
+            loading="eager"
+            src={banner}
+            className="absolute inset-0 rounded-large object-cover object-center"
+            alt="Product image"
+            fill
+            sizes="(max-width: 576px) 280px, (max-width: 768px) 360px, (max-width: 992px) 480px, 800px"
+          />
+        )}
       </div>
     </div>
   )
