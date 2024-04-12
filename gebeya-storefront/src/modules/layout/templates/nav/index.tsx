@@ -6,7 +6,7 @@ import LocalizedClientLink from "@modules/common/components/localized-client-lin
 import CartButton from "@modules/layout/components/cart-button"
 import SideMenu from "@modules/layout/components/side-menu"
 
-import banner from "../../../../../public/ee1.jpg"
+import banner from "../../../../../public/gebeya.png"
 
 export default async function Nav() {
   const regions = await listRegions().then((regions) => regions)
@@ -25,8 +25,8 @@ export default async function Nav() {
                 <Image
                   src={banner}
                   alt="logo"
-                  width={50}
-                  height={50}
+                  width={60}
+                  height={60}
                   className=""
                 />
                 <span>gebeya</span>
