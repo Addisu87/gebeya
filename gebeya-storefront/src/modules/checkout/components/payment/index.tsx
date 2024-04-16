@@ -172,7 +172,10 @@ const Payment = ({
               </div>
             )}
 
-            <ErrorMessage error={error} data-testid="payment-method-error-message" />
+            <ErrorMessage
+              error={error}
+              data-testid="payment-method-error-message"
+            />
 
             <Button
               size="large"
@@ -198,7 +201,10 @@ const Payment = ({
                 <Text className="txt-medium-plus text-ui-fg-base mb-1">
                   Payment method
                 </Text>
-                <Text className="txt-medium text-ui-fg-subtle" data-testid="payment-method-summary">
+                <Text
+                  className="txt-medium text-ui-fg-subtle"
+                  data-testid="payment-method-summary"
+                >
                   {paymentInfoMap[cart.payment_session.provider_id]?.title ||
                     cart.payment_session.provider_id}
                 </Text>
@@ -214,7 +220,10 @@ const Payment = ({
                 <Text className="txt-medium-plus text-ui-fg-base mb-1">
                   Payment details
                 </Text>
-                <div className="flex gap-2 txt-medium text-ui-fg-subtle items-center" data-testid="payment-details-summary">
+                <div
+                  className="flex gap-2 txt-medium text-ui-fg-subtle items-center"
+                  data-testid="payment-details-summary"
+                >
                   <Container className="flex items-center h-7 w-fit p-2 bg-ui-button-neutral-hover">
                     {paymentInfoMap[cart.payment_session.provider_id]?.icon || (
                       <CreditCard />

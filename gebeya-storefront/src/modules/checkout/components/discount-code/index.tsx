@@ -69,7 +69,9 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
               >
                 <Text className="flex gap-x-1 items-baseline">
                   <span>Code: </span>
-                  <span className="truncate" data-testid="gift-card-code">{gc.code}</span>
+                  <span className="truncate" data-testid="gift-card-code">
+                    {gc.code}
+                  </span>
                 </Text>
                 <Text className="font-semibold" data-testid="gift-card-amount">
                   {formatAmount({
@@ -138,9 +140,17 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
                     autoFocus={false}
                     data-testid="discount-input"
                   />
-                  <SubmitButton variant="secondary" data-testid="discount-apply-button">Apply</SubmitButton>
+                  <SubmitButton
+                    variant="secondary"
+                    data-testid="discount-apply-button"
+                  >
+                    Apply
+                  </SubmitButton>
                 </div>
-                <ErrorMessage error={message} data-testid="discount-error-message" />
+                <ErrorMessage
+                  error={message}
+                  data-testid="discount-error-message"
+                />
               </>
             )}
           </form>

@@ -28,7 +28,10 @@ const LineItemUnitPrice = ({
             {style === "default" && (
               <span className="text-ui-fg-muted">Original: </span>
             )}
-            <span className="line-through" data-testid="product-unit-original-price">
+            <span
+              className="line-through"
+              data-testid="product-unit-original-price"
+            >
               {formatAmount({
                 amount: originalPrice,
                 region: region,

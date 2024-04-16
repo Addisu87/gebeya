@@ -27,7 +27,7 @@ export default async function Nav() {
                   alt="logo"
                   width={60}
                   height={60}
-                  className=""
+                  className="rounded-full"
                 />
                 <span>gebeya</span>
               </div>
