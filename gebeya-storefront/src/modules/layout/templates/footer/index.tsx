@@ -89,6 +89,7 @@ export default async function Footer() {
                 </ul>
               </div>
             )}
+
             {collections && collections.length > 0 && (
               <div className="flex flex-col gap-y-2">
                 <span className="txt-small-plus txt-ui-fg-base">
@@ -96,9 +97,9 @@ export default async function Footer() {
                 </span>
                 <ul
                   className={clx(
-                    "grid grid-cols-1 gap-2 text-ui-fg-subtle txt-small",
+                    "grid grid-cols-1 lg:grid-cols-2 gap-2 text-ui-fg-subtle txt-small",
                     {
-                      "grid-cols-2": (collections?.length || 0) > 3,
+                      "grid-cols-1": (collections?.length || 0) > 3,
                     }
                   )}
                 >
@@ -116,24 +117,33 @@ export default async function Footer() {
               </div>
             )}
 
-            <div className="flex flex-col gap-y-2">
-              <span className="txt-small-plus txt-ui-fg-base">
-                Social Links
-              </span>
+            {socials && socials.length > 0 && (
+              <div className="flex flex-col gap-y-2">
+                <span className="txt-small-plus txt-ui-fg-base">
+                  Social Links
+                </span>
 
-              <ul className="grid grid-cols-1 gap-y-2 txt-compact-small-plus items-center">
-                {socials.map((social) => (
-                  <li key={social.id}>
-                    <LocalizedClientLink
-                      href={social.url}
-                      className="text-gray-400 h-4 w-4"
-                    >
-                      {social.icon}
-                    </LocalizedClientLink>
-                  </li>
-                ))}
-              </ul>
-            </div>
+                <ul
+                  className={clx(
+                    "grid grid-cols-1 lg:grid-cols-2 gap-2 text-ui-fg-subtle txt-small",
+                    {
+                      "grid-cols-1": (socials?.length || 0) > 3,
+                    }
+                  )}
+                >
+                  {socials.map((social) => (
+                    <li key={social.id}>
+                      <LocalizedClientLink
+                        href={social.url}
+                        className="text-gray-400 h-4 w-4"
+                      >
+                        {social.icon}
+                      </LocalizedClientLink>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </div>
         <div className="flex w-full mb-16 justify-between text-ui-fg-muted">
