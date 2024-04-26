@@ -124,15 +124,15 @@
 	],
 	"products": [
 		{
-			"title": "Medusa T-Shirt",
+			"title": "Chiffon",
 			"categories": [
 				{
-					"id": "pcat_shirts"
+					"id": "chiffon"
 				}
 			],
 			"subtitle": null,
-			"description": "Reimagine the feeling of a classic T-shirt. With our cotton T-shirts, everyday essentials no longer have to be ordinary.",
-			"handle": "t-shirt",
+			"description": "Reimagine the feeling of a classic T-shirt. With our cotton chiffon, everyday essentials no longer have to be ordinary.",
+			"handle": "chiffon",
 			"is_giftcard": false,
 			"weight": 400,
 			"images": [
@@ -339,15 +339,15 @@
 			]
 		},
 		{
-			"title": "Medusa Sweatshirt",
+			"title": "Habesha Dress",
 			"categories": [
 				{
-					"id": "pcat_shirts"
+					"id": "habesha_dress"
 				}
 			],
 			"subtitle": null,
-			"description": "Reimagine the feeling of a classic sweatshirt. With our cotton sweatshirt, everyday essentials no longer have to be ordinary.",
-			"handle": "sweatshirt",
+			"description": "Reimagine the feeling of a classic habesha dress. With our cotton sweatshirt, everyday essentials no longer have to be ordinary.",
+			"handle": "habesha-dress",
 			"is_giftcard": false,
 			"weight": 400,
 			"images": [
@@ -444,15 +444,15 @@
 			]
 		},
 		{
-			"title": "Medusa Sweatpants",
+			"title": "Chiffon",
 			"categories": [
 				{
-					"id": "pcat_pants"
+					"id": "chiffon"
 				}
 			],
 			"subtitle": null,
-			"description": "Reimagine the feeling of classic sweatpants. With our cotton sweatpants, everyday essentials no longer have to be ordinary.",
-			"handle": "sweatpants",
+			"description": "Reimagine the feeling of classic chiffon. With our cotton chiffon, everyday essentials no longer have to be ordinary.",
+			"handle": "chiffon",
 			"is_giftcard": false,
 			"weight": 400,
 			"images": [
@@ -552,7 +552,7 @@
 			"title": "Medusa Shorts",
 			"categories": [
 				{
-					"id": "pcat_merch"
+					"id": "pcat_dress"
 				}
 			],
 			"subtitle": null,
@@ -654,18 +654,15 @@
 			]
 		},
 		{
-			"title": "Medusa Hoodie",
+			"title": "Weeding Dress",
 			"categories": [
 				{
-					"id": "pcat_merch"
-				},
-				{
-					"id": "pcat_hidden_featured"
+					"id": "weeding_dress"
 				}
 			],
 			"subtitle": null,
-			"description": "Reimagine the feeling of a classic hoodie. With our cotton hoodie, everyday essentials no longer have to be ordinary.",
-			"handle": "hoodie",
+			"description": "Reimagine the feeling of a classic wedding dress. With our cotton hoodie, everyday essentials no longer have to be ordinary.",
+			"handle": "weeding_dress",
 			"is_giftcard": false,
 			"weight": 400,
 			"images": [
@@ -762,18 +759,15 @@
 			]
 		},
 		{
-			"title": "Medusa Longsleeve",
+			"title": "Chiffon",
 			"categories": [
 				{
-					"id": "pcat_shirts"
-				},
-				{
-					"id": "pcat_hidden_featured"
+					"id": "chiffon"
 				}
 			],
 			"subtitle": null,
-			"description": "Reimagine the feeling of a classic longsleeve. With our cotton longsleeve, everyday essentials no longer have to be ordinary.",
-			"handle": "longsleeve",
+			"description": "Reimagine the feeling of a classic chiffon. With our cotton chiffon, everyday essentials no longer have to be ordinary.",
+			"handle": "chiffon",
 			"is_giftcard": false,
 			"weight": 400,
 			"images": [
@@ -870,10 +864,10 @@
 			]
 		},
 		{
-			"title": "Medusa Coffee Mug",
+			"title": "Jewelry",
 			"categories": [
 				{
-					"id": "pcat_merch"
+					"id": "jewelry"
 				},
 				{
 					"id": "pcat_hidden_featured"
@@ -881,7 +875,7 @@
 			],
 			"subtitle": null,
 			"description": "Every programmer's best friend.",
-			"handle": "coffee-mug",
+			"handle": "jewelry",
 			"is_giftcard": false,
 			"weight": 400,
 			"images": [
@@ -931,13 +925,6 @@
 			"rank": 0,
 			"category_children": [],
 			"handle": "wedding_dress"
-		},
-		{
-			"id": "kaba",
-			"name": "Kaba",
-			"rank": 0,
-			"category_children": [],
-			"handle": "kaba"
 		},
 		{
 			"id": "jewelry",
