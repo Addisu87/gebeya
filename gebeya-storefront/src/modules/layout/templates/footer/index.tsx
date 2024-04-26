@@ -2,16 +2,18 @@ import { Text, clx } from "@medusajs/ui"
 
 import { getCategoriesList, getCollectionsList } from "@lib/data"
 
-import { X } from "@medusajs/icons"
+import Image from "next/image"
+import { Facebook, X } from "@medusajs/icons"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import MedusaCTA from "@modules/layout/components/medusa-cta"
 
+import banner from "../../../../../public/gebeya.png"
+
 const socials = [
-  { id: 1, icon: <X />, url: "www.facebook.com" },
+  { id: 1, icon: <Facebook />, url: "www.facebook.com" },
   { id: 2, icon: <X />, url: "www.twitter.com" },
-  { id: 3, icon: <X />, url: "www.github.com" },
-  { id: 4, icon: <X />, url: "www.youtube.com" },
-  { id: 5, icon: <X />, url: "www.instagram.com" },
+  { id: 3, icon: <X />, url: "www.youtube.com" },
+  { id: 4, icon: <X />, url: "www.instagram.com" },
 ]
 
 export default async function Footer() {
@@ -22,7 +24,14 @@ export default async function Footer() {
     <footer className="border-t border-ui-border-base w-full">
       <div className="content-container flex flex-col w-full">
         <div className="flex flex-col gap-y-6 xsmall:flex-row items-start justify-between py-16">
-          <div>
+          <div className="flex space-x-2 justify-center items-center">
+            <Image
+              src={banner}
+              alt="logo"
+              width={60}
+              height={60}
+              className="rounded-full"
+            />
             <LocalizedClientLink
               href="/"
               className="txt-compact-xlarge-plus text-ui-fg-subtle hover:text-ui-fg-base uppercase"
@@ -30,6 +39,7 @@ export default async function Footer() {
               Gebeya
             </LocalizedClientLink>
           </div>
+
           <div className="text-small-regular gap-10 md:gap-x-16 grid grid-cols-2 sm:grid-cols-3">
             {product_categories && product_categories?.length > 0 && (
               <div className="flex flex-col gap-y-2">
@@ -95,14 +105,7 @@ export default async function Footer() {
                 <span className="txt-small-plus txt-ui-fg-base">
                   Collections
                 </span>
-                <ul
-                  className={clx(
-                    "grid grid-cols-1 lg:grid-cols-2 gap-2 text-ui-fg-subtle txt-small",
-                    {
-                      "grid-cols-1": (collections?.length || 0) > 3,
-                    }
-                  )}
-                >
+                <ul className="grid grid-cols-1 gap-2 text-ui-fg-subtle txt-small">
                   {collections?.slice(0, 6).map((c) => (
                     <li key={c.id}>
                       <LocalizedClientLink
@@ -123,14 +126,15 @@ export default async function Footer() {
                   Social Links
                 </span>
 
-                <ul
+                {/* <ul
                   className={clx(
-                    "grid grid-cols-1 lg:grid-cols-2 gap-2 text-ui-fg-subtle txt-small",
+                    "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 text-ui-fg-subtle txt-small",
                     {
-                      "grid-cols-1": (socials?.length || 0) > 3,
+                      "grid-cols-2": (socials?.length || 0) > 3,
                     }
                   )}
-                >
+                > */}
+                <ul className="flex gap-4 text-ui-fg-subtle txt-small">
                   {socials.map((social) => (
                     <li key={social.id}>
                       <LocalizedClientLink
