@@ -12,8 +12,8 @@ import banner from "../../../../../public/gebeya.png"
 const socials = [
   { id: 1, icon: <Facebook />, url: "www.facebook.com" },
   { id: 2, icon: <X />, url: "www.twitter.com" },
-  { id: 3, icon: <X />, url: "www.youtube.com" },
-  { id: 4, icon: <X />, url: "www.instagram.com" },
+  { id: 3, icon: <Facebook />, url: "www.youtube.com" },
+  { id: 4, icon: <Facebook />, url: "www.instagram.com" },
 ]
 
 export default async function Footer() {
@@ -21,9 +21,9 @@ export default async function Footer() {
   const { product_categories } = await getCategoriesList(0, 6)
 
   return (
-    <footer className="border-t border-ui-border-base w-full">
+    <footer className="border-t border-ui-border-base w-full bg-[#ffd700]">
       <div className="content-container flex flex-col w-full">
-        <div className="flex flex-col gap-y-6 xsmall:flex-row items-start justify-between py-16">
+        <div className="flex flex-col gap-y-6 xsmall:flex-row items-start justify-between py-8">
           <div className="flex space-x-2 justify-center items-center">
             <Image
               src={banner}
@@ -64,7 +64,7 @@ export default async function Footer() {
 
                     return (
                       <li
-                        className="flex flex-col gap-2 text-ui-fg-subtle txt-small"
+                        className="flex flex-col text-ui-fg-subtle txt-small"
                         key={c.id}
                       >
                         <LocalizedClientLink
@@ -125,16 +125,15 @@ export default async function Footer() {
                 <span className="txt-small-plus txt-ui-fg-base">
                   Social Links
                 </span>
-
-                {/* <ul
+                <ul
                   className={clx(
-                    "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 text-ui-fg-subtle txt-small",
+                    "grid grid-cols-1 md:grid-cols-2 gap-y-2 text-ui-fg-subtle txt-small",
                     {
-                      "grid-cols-2": (socials?.length || 0) > 3,
+                      "grid-cols-2": (socials?.length || 0) > 2,
                     }
                   )}
-                > */}
-                <ul className="flex gap-4 text-ui-fg-subtle txt-small">
+                >
+                  {/* <ul className="flex gap-2 text-ui-fg-subtle txt-small"> */}
                   {socials.map((social) => (
                     <li key={social.id}>
                       <LocalizedClientLink
@@ -150,8 +149,8 @@ export default async function Footer() {
             )}
           </div>
         </div>
-        <div className="flex w-full mb-16 justify-between text-ui-fg-muted">
-          <Text className="txt-compact-small">
+        <div className="flex w-full mb-8 justify-between text-ui-fg-muted border-t border-ui-border-base">
+          <Text className="txt-compact-small mt-1">
             © {new Date().getFullYear()} Gebeya Store. All rights reserved.
           </Text>
           <MedusaCTA />

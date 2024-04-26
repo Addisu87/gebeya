@@ -7,13 +7,14 @@ import CartButton from "@modules/layout/components/cart-button"
 import SideMenu from "@modules/layout/components/side-menu"
 
 import banner from "../../../../../public/gebeya.png"
+import { ShoppingCart } from "@medusajs/icons"
 
 export default async function Nav() {
   const regions = await listRegions().then((regions) => regions)
 
   return (
     <div className="sticky top-0 inset-x-0 z-50 group">
-      <header className="relative h-16 mx-auto border-b duration-200 bg-white border-ui-border-base">
+      <header className="relative h-16 mx-auto border-b duration-200 bg-[#ffd700] border-ui-border-base">
         <nav className="content-container text-ui-fg-subtle flex items-center justify-between w-full h-full text-large-regular space-x-3">
           <div className="flex items-center h-full">
             <LocalizedClientLink
@@ -68,7 +69,7 @@ export default async function Nav() {
                     href="/cart"
                     data-testid="nav-cart-link"
                   >
-                    Cart (0)
+                    <ShoppingCart /> (0)
                   </LocalizedClientLink>
                 }
               >
@@ -78,7 +79,7 @@ export default async function Nav() {
           </div>
 
           <div className="flex basis-0 h-full items-center">
-            <div className="h-full lg:hidden">
+            <div className="h-full md:hidden">
               <SideMenu regions={regions} />
             </div>
           </div>
