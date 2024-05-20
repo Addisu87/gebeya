@@ -9,7 +9,7 @@ import { cache } from "react"
 
 export const metadata: Metadata = {
   title: "Ethiopian cultural clothes",
-  description: "A habesha clothes e-commerce with Next.js 14 and Medusa.",
+  description: "A habesha clothes e-commerce with Next.js-14 and Medusa.",
 }
 
 const getCollectionsWithProducts = cache(
